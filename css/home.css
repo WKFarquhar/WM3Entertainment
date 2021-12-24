@@ -1,0 +1,644 @@
+/* Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  background: #171e15;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+h1 {
+  margin: 0;
+  line-height: 1.9;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.25em;
+  color: rgba(65%, 65%, 65%, 1);
+  line-height: 1.8;
+}
+
+p {
+  font-size: 1.1em;
+  margin: 1em 0em;
+  padding: 5px 5px 5px 0px;
+  line-height: 1.7;
+}
+
+.featured {
+  margin: 3rem 0 200px 0;
+  align-self: center;
+  box-shadow: 0px 5px 10px 2px black;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+}
+
+img {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+
+
+
+/* Nav and Sidebar */
+.logo {
+  height: 2.45rem;
+  width: auto;
+  font-size: 1.5rem;
+  transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+  -webkit-transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+}
+
+.logo:hover {
+  height: 2.9rem;
+}
+
+#logo {
+  margin: 0rem 0 0 3rem;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: inherit;
+  width: 100%;
+}
+
+nav {
+  height: 3em;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background: rgba(10%, 10%, 10%, 95%);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 1px 4px 2px black, -2px 1px 4px 2px black;
+}
+
+nav ul {
+  display: flex;
+  margin: 0 2rem 0 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+  padding: 1rem;
+  display: block;
+  transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+  -webkit-transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+  transform: scale(0.9);
+}
+
+nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav li:hover {
+  background: rgba(10%, 10%, 10%, 100%);
+  transform: scale(1.25);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  margin: 0 3rem 0 0;
+}
+
+.toggle-button .bar {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.bar-trans {
+  transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+  -webkit-transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+}
+
+.sidebar {
+  display: none;
+}
+
+.stopProp {
+  pointer-events: auto;
+}
+
+#darken {
+  display: none;
+  position: fixed;
+  top: 3rem;
+  z-index: 1;
+  background: rgba(10%, 10%, 10%, 50%);
+  width: 100%;
+  height: 100%;
+  transition: 0.225s ease;
+}
+
+.anchor-target {
+  display: block;
+  position: relative;
+  top: -4rem;
+  visibility: hidden;
+}
+
+
+
+
+/* Parallax Scene */
+/* Scale Calculation: 1 + ((z transform value * -1) / perspective) */
+/* Transform Translate Value: x pos in pixels / window.innerWidth = x pos in vw units
+ (same with height and vh for y)*/
+.parallax_wrapper {
+  height: auto;
+  width: auto;
+  overflow-x: visible;
+  overflow-y: visible;
+  perspective: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.parallax_group {
+  display: none;
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  transform-style: preserve-3d;
+}
+
+.parallax_layer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  image-rendering: crisp-edges;
+}
+
+#group_1 {
+  z-index: -1;
+}
+
+.purple {
+  transform: translateZ(-2400px) scale(3);
+  background: #31032d;
+}
+
+.nebulas {
+  transform: translateZ(-2280px) scale(2.9);
+  background: linear-gradient(177deg, rgba(0, 182, 240, 100%), rgba(0%, 0%, 100%, 11%), rgba(8, 45, 8, 0%) 48%);
+}
+
+.sml-stars {
+  transform: translateZ(-2160px) scale(2.8);
+  background: url('../img/space-scene/sml-stars.png');
+}
+
+.med-stars {
+  transform: translateZ(-2040px) scale(2.7);
+  background: url('../img/space-scene/med-stars.png');
+}
+
+.lrg-stars {
+  transform: translateZ(-1920px) scale(2.6);
+  background: url('../img/space-scene/lrg-stars.png');
+}
+
+.sml-asteroid-1 {
+  transform: translate3d(62.5vw, -19.544vh, -1800px) scale(2.5);
+  background: url('../img/space-scene/sml-asteroid-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sml-asteroid-2 {
+  transform: translate3d(31.25vw, 52.117vh, -1800px) scale(2.5);
+  background: url('../img/space-scene/sml-asteroid-2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.med-asteroid-1 {
+  transform: translate3d(89.583vw, -43.431vh, -1680px) scale(2.4);
+  background: url('../img/space-scene/med-asteroid-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.med-asteroid-2 {
+  transform: translate3d(-100vw, -52.117vh, -1680px) scale(2.4);
+  background: url('../img/space-scene/med-asteroid-2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fade {
+  transform: translateZ(-1560px) scale(2.3);
+  background: linear-gradient(177deg, rgba(0, 182, 240, 0%), rgba(0%, 0%, 100%, 0%), rgba(8, 45, 8, 64%) 48%);
+}
+
+.lrg-asteroid-1 {
+  transform: translate3d(-52.083vw, 10.858vh, -1440px) scale(2.2);
+  background: url('../img/space-scene/lrg-asteroid-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lrg-asteroid-2 {
+  transform: translate3d(100vw, 52.117vh, -1440px) scale(2.2);
+  background: url('../img/space-scene/lrg-asteroid-2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blue-ship {
+  transform: translate3d(100px, calc(var(--vh, 1vh) * -8.029), -720px) scale(1.6);
+  background: url('../img/space-scene/blue-ship.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blue-bullet {
+  transform: translate3d(93px, calc(var(--vh, 1vh) * -2.058), -840px) scale(1.7);
+  background: url('../img/space-scene/blue-bullet.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-ship {
+  transform: translate3d(0vw, calc(var(--vh, 1vh) * 39.088), -120px) scale(1.1);
+  background: url('../img/space-scene/red-ship.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-bullet-1 {
+  transform: translate3d(0vw, 0vh, 0px) scale(1);
+  background: url('../img/space-scene/red-bullets.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-bullet-2 {
+  transform: translate3d(0vw, calc(var(--vh, 1vh) * 10.857), 0px) scale(1);
+  background: url('../img/space-scene/red-bullets.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-bullet-3 {
+  transform: translate3d(0vw, calc(var(--vh, 1vh) * 21.715), 0px) scale(1);
+  background: url('../img/space-scene/red-bullets.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-bullet-4 {
+  transform: translate3d(0vw, calc(var(--vh, 1vh) * 32.573), 0px) scale(1);
+  background: url('../img/space-scene/red-bullets.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.red-hit-1 {
+  transform: translate3d(32px, 0vh, 0px) scale(1);
+  background: url('../img/space-scene/red-hit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+}
+
+.red-hit-2 {
+  transform: translate3d(32px, calc(var(--vh, 1vh) * 10.904), 0px) scale(1);
+  background: url('../img/space-scene/red-hit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+}
+
+.red-hit-3 {
+  transform: translate3d(32px, calc(var(--vh, 1vh) * 21.809), 0px) scale(1);
+  background: url('../img/space-scene/red-hit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+}
+
+.red-hit-4 {
+  transform: translate3d(32px, calc(var(--vh, 1vh) * 32.714), 0px) scale(1);
+  background: url('../img/space-scene/red-hit.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+}
+
+
+
+
+/* Cards */
+#showcase {
+  display: block;
+  align-self: center;
+  margin-bottom: 150px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 1rem 200px 1rem;
+  min-width: 640px;
+  max-width: 1280px;
+  border-radius: 0 0 3rem 0rem;
+  box-shadow: 0px 5px 10px 2px black;
+}
+
+.card-content.thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  min-width: 640px;
+  min-height: 360px;
+}
+
+.card-content.thumbnail > img {
+  align-self: center;
+  box-shadow: 0px 5px 10px 2px black;
+  z-index: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.card-content.text {
+  text-align: left;
+  padding: 1em 2em;
+  margin: 0;
+  background: linear-gradient(217deg, rgba(207,40,31,.8), rgba(255,0,0,0) 70.71%);
+  border-radius: 0 0 3rem 0rem;
+  align-content: center;
+}
+
+.card-content.text > h1::after {
+  border-top: 1px solid;
+  border-color: white;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 150px;
+  margin-bottom: 0;
+}
+
+.card-content.text.game-dev > h1::after {
+  width: 150px;
+}
+
+img.audio-pic {
+  max-height: 360px;
+}
+
+footer {
+  border-top: 1px solid;
+  border-color: rgba(215, 19, 6, 1);
+  padding: 1em;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  font-size: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 70%);
+}
+
+footer > * {
+  margin: 0.25em;
+}
+
+
+
+
+/* Tablet View */
+@media (max-width: 1200px) {
+
+  .featured {
+    box-shadow: 0px 5px 10px 2px black;
+  }
+
+  #logo {
+    align-self: center;
+  }
+
+  .navbar-links li {
+    display: none;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 0;
+    transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+    position: fixed;
+    z-index: 2;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    background: rgba(25%, 25%, 25%, 95%);
+  }
+
+  .sidebar-links > li::after {
+    border-top: 2px solid;
+    border-color: white;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 256px;
+    margin-bottom: 0;
+  }
+
+  .s-links {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-direction: column;
+    transition: 0s;
+  }
+
+  .sidebar-links li {
+    list-style: none;
+    padding: 1rem;
+    display: block;
+    transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+    -webkit-transition: 0.225s cubic-bezier(.46,.39,.22,1.38);
+    transform: scale(0.9);
+  }
+
+  .sidebar-links li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sidebar li:hover {
+    background: rgba(10%, 10%, 10%, 100%);
+    transform: scale(1.25);
+  }
+
+  .sidebar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .sidebar-links.active {
+    display: flex;
+  }
+
+  .featured {
+    margin: 3rem 0 0 0;
+  }
+
+  .card {
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    width: auto;
+  }
+
+  .card-content.text {
+    margin: 0 0 0rem 0;
+    padding: 1em 2em;
+    border-radius: 0 0 3rem 3rem;
+  }
+
+  .card-content.thumbnail {
+    margin: 0;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+  }
+
+  img.audio-pic {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .games {
+    margin-top: 200px;
+  }
+
+  .space-shooter {
+    image-rendering: crisp-edges;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+
+
+/*Text Fix*/
+@media (max-width: 528px) {
+  br {
+    content: " ";
+    display: none;
+  }
+}
+
+
+
+
+/* Mobile View */
+@media (max-width: 700px) {
+
+  #games {
+    top: -24rem;
+  }
+
+  video {
+    margin-bottom: 0;
+  }
+
+  #logo {
+    margin: 0 0 0 2rem;
+  }
+
+  .toggle-button {
+    margin: 0 2rem 0 0;
+  }
+
+  .sidebar-links li a {
+    padding: 0;
+  }
+
+  #showcase {
+    background: #171e15;
+  }
+
+  .card {
+    margin: 0 0 200px 0;
+  }
+
+  .space-shooter {
+    display: none;
+  }
+
+  .parallax_wrapper {
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1200px;
+    display: block;
+  }
+
+  .parallax_group {
+    display: block;
+  }
+}

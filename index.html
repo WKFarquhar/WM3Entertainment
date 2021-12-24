@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png?">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png?">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png?">
+    <link rel="manifest" href="/img/favicon/site.webmanifest?">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg?" color="#11c8f5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico?">
+    <meta name="msapplication-TileColor" content="#11c8f5">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml?">
+    <meta name="theme-color" content="#000000">
+    <title>WM3 Entertainment</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <nav class="navbar">
+        <div id="logo"><a href="#featured"><img class="logo" src="./img/wm3-logo.svg"></img></a></div>
+        <a class="toggle-button" onclick="toggleSideBar()">
+          <span class="bar bar-top"></span>
+          <span class="bar bar-middle bar-trans"></span>
+          <span class="bar bar-middle2 bar-trans"></span>
+          <span class="bar bar-bottom"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#cgi">CGI</a></li>
+            <li><a href="#audio">Audio</a></li>
+            <li><a href="#web-dev">Web</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+        <div class="sidebar">
+          <div class="sidebar-links">
+            <ul class="s-links">
+              <li><a onclick="toggleSideBar()" href="#featured">Featured</a></li>
+              <li><a onclick="toggleSideBar()" href="#games">Games</a></li>
+              <li><a onclick="toggleSideBar()" href="#cgi">CGI</a></li>
+              <li><a onclick="toggleSideBar()" href="#audio">Audio</a></li>
+              <li><a onclick="toggleSideBar()" href="#web-dev">Web</a></li>
+              <li><a onclick="toggleSideBar()" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      <div id="darken" onclick="toggleSideBar()"></div>
+    </div>
+    <div class="parallax_wrapper">
+      <div class="featured stopProp">
+          <span id="featured" class="anchor-target"></span>
+          <video controls loop playsinline preload="metadata" poster="./img/tunnel-thumbnail.png">
+          <source src="./img/tunnel.mp4" type="video/mp4">
+          <source src="./img/tunnel.avi" type="video/avi">
+          </video>
+      </div>
+      <div class="parallax_group" id="group_1">
+        <div class="parallax_layer purple"></div>
+        <div class="parallax_layer nebulas"></div>
+        <div class="parallax_layer sml-stars"></div>
+        <div class="parallax_layer med-stars"></div>
+        <div class="parallax_layer lrg-stars"></div>
+        <div class="parallax_layer sml-asteroid-1"></div>
+        <div class="parallax_layer sml-asteroid-2"></div>
+        <div class="parallax_layer med-asteroid-1"></div>
+        <div class="parallax_layer med-asteroid-2"></div>
+        <div class="parallax_layer fade"></div>
+        <div class="parallax_layer lrg-asteroid-1"></div>
+        <div class="parallax_layer lrg-asteroid-2"></div>
+        <div class="parallax_layer blue-ship"></div>
+        <div class="parallax_layer blue-bullet"></div>
+        <div class="parallax_layer red-ship"></div>
+        <div class="parallax_layer red-bullet-1"></div>
+        <div class="parallax_layer red-bullet-2"></div>
+        <div class="parallax_layer red-bullet-3"></div>
+        <div class="parallax_layer red-bullet-4"></div>
+        <div class="parallax_layer red-hit-1"></div>
+        <div class="parallax_layer red-hit-2"></div>
+        <div class="parallax_layer red-hit-3"></div>
+        <div class="parallax_layer red-hit-4"></div>
+      </div>
+      <div id="showcase">
+          <div class="games card">
+            <span id="games" class="anchor-target"></span>
+            <div class="card-content thumbnail">
+              <img class="space-shooter" src="./img/space-shooter.png" alt="Two spaceships engaged in combat.">
+            </div>
+            <div class="card-content text game-dev">
+              <h1 class="card-title">Games</h1>
+              <h2>Upcoming Sci-fi & Industrial Themed Titles</h2>
+              <p class="card-description">To inspire the player
+                through interactive digital experiences.
+                <br>WM3 Entertainment seeks to introduce new
+                concepts to the world of entertainment software by
+                attempting to expand upon actual scientific hypotheses.</p>
+            </div>
+          </div>
+          <div class="cgi card">
+            <span id="cgi" class="anchor-target"></span>
+            <div class="card-content thumbnail">
+              <img src="./img/atomic-collapse.jpg" alt="A computer generated atom.">
+            </div>
+            <div class="card-content text">
+              <h1 class="card-title">CGI</h1>
+              <h2>Abstract & Surreal Visual Art</h2>
+              <p class="card-description">
+                To tell stories and instill euphoria into an audience.
+                <br>WM3 Entertainment seeks to move the viewer by
+                making their heart overflow with emotion when their eyes become
+                overwhelmed by the colors of a truly unique style of art.</p>
+            </div>
+          </div>
+          <div class="audio card">
+            <span id="audio" class="anchor-target"></span>
+            <div class="card-content thumbnail">
+              <img class="audio-pic" src="./img/eyes-closed.png" alt="What I see when I close my eyes.">
+            </div>
+            <div class="card-content text">
+              <h1 class="card-title">Audio</h1>
+              <h2>Original Music & Procedural Audio</h2>
+              <p class="card-description">To provide user-friendly
+              solutions to digital audio projects.
+              <br>WM3 Entertainment seeks to provide
+              original soundtracks as well as procedural audio solutions that will give
+              fellow creators quick access to manipulating digital audio with code.
+              </p>
+            </div>
+          </div>
+          <div class="web-dev card">
+            <span id="web-dev" class="anchor-target"></span>
+            <div class="card-content thumbnail">
+              <img src="./img/wm3-logo.png" alt="The WM3 Logo.">
+            </div>
+            <div class="card-content text">
+              <h1 class="card-title">Web Dev</h1>
+              <h2>Lightweight Software Design Architecture</h2>
+              <p class="card-description">To create software that performs well on all devices.
+                <br>WM3 Entertainment seeks to provide a constructive source of entertainment
+                to everyone, everywhere, as well as website and mobile application design
+                and development support for fellow creators.</p>
+            </div>
+          </div>
+      </div>
+      <span id="contact" class="anchor-target"></span>
+      <footer class="contact">
+        <span id="copyright">© 2021 WM3 Entertainment</span>
+        <span id="email"><b>wm3entertainment@gmail.com</b></span>
+      </footer>
+    </div>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
