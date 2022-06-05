@@ -1,16 +1,13 @@
 var vh = window.innerHeight * 0.01;
-
 var sideBar = document.querySelector('.sidebar');
 var sLinks = document.querySelector('.s-links');
+var middleBar = document.querySelector('.bar-middle');
 var topBar = document.querySelector('.bar-top');
-var midBar = document.querySelector('.bar-middle');
-var hidBar = document.querySelector('.bar-middle2');
-var botBar = document.querySelector('.bar-bottom');
+var bottomBar = document.querySelector('.bar-bottom');
 var pWrapper = document.querySelector('.parallax_wrapper');
 var toggleButton = document.querySelector('.toggle-button');
 var darken = document.querySelector('#darken');
 var stopProp = document.querySelectorAll('.stopProp');
-
 var repeater;
 var redHit1 = document.querySelector('.red-hit-1');
 var redHit2 = document.querySelector('.red-hit-2');
@@ -30,10 +27,9 @@ function toggleSideBar() {
       sideBar.style.width = '7.81rem';
     }
     
-    topBar.style.visibility = 'hidden';
-    midBar.style.transform = 'rotate(45deg) translate(0px, 4.4px)';
-    hidBar.style.transform = 'rotate(-45deg) translate(0px, -4.4px)';
-    botBar.style.visibility = 'hidden';
+    middleBar.style.visibility = 'hidden';
+    topBar.style.transform = 'translate(-4px, 11.5px) rotate(45deg)';
+    bottomBar.style.transform = 'translate(-4px, -11.5px) rotate(-45deg)';
     pWrapper.style.opacity = '0.5';
     pWrapper.setAttribute('onclick', 'toggleSideBar()');
     pWrapper.style.pointerEvents = 'none';
@@ -48,10 +44,9 @@ function toggleSideBar() {
   } else {
     sLinks.style.display = 'none';
     sideBar.style.width = '0';
-    topBar.style.visibility = 'visible';
-    midBar.style.transform = 'rotate(0deg)';
-    hidBar.style.transform = 'rotate(0deg)';
-    botBar.style.visibility = 'visible';
+    middleBar.style.visibility = 'visible';
+    topBar.style.transform = 'rotate(0deg)';
+    bottomBar.style.transform = 'rotate(0deg)';
     pWrapper.style.opacity = '1';
     pWrapper.removeAttribute('onclick');
     pWrapper.style.pointerEvents = 'auto';
@@ -85,5 +80,4 @@ var resizeHandler = function onResize() {
 }
 
 document.documentElement.addEventListener('resize', resizeHandler, true);
-
 detectCollision();
